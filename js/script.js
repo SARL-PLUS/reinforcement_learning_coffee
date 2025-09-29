@@ -231,20 +231,34 @@ if(linkElement) {
                 const institution = row[institutionIdx] != null ? String(row[institutionIdx]) : '';
                 const topicRaw = row[topicIdx] != null ? String(row[topicIdx]) : '';
                 const link = row[linkIdx] != null ? String(row[linkIdx]) : '';
-                const description = row[descIdx] != null ? String(row[descIdx]) : '';
 
-                // Skip rows without any meaningful content
-                if (![rawDate, name, institution, topicRaw, link, description].some(v => v && String(v).trim())) continue;
+                // Skip completely empty rows
+                if (![rawDate, name, institution, topicRaw, link].some(v => v && String(v).trim())) continue;
+
+                // Skip any header-like row (e.g., "Date | Name | Institution | Topic (optional) | Link")
+                const norm = (s) => String(s || '').toLowerCase().trim();
+                const v0 = norm(rawDate);
+                const v1 = norm(name);
+                const v2 = norm(institution);
+                const v3 = norm(topicRaw);
+                const v4 = norm(link);
+
+                const containsAny = (s, arr) => arr.some(tok => s.includes(tok));
+                const headerMatches =
+                    (containsAny(v0, ['date']) ? 1 : 0) +
+                    (containsAny(v1, ['name']) ? 1 : 0) +
+                    (containsAny(v2, ['institution', 'affiliation', 'organization', 'org', 'university']) ? 1 : 0) +
+                    (containsAny(v3, ['topic', 'title', 'subject']) ? 1 : 0) + // matches "topic (optional)"
+                    (containsAny(v4, ['link', 'url']) ? 1 : 0);
+                if (headerMatches >= 4) continue;
 
                 const dateObj = parseSheetDate(rawDate);
-                // Prefer the original formatted string for display if available
+                // Display string for date
                 let dateStr = typeof rawDate === 'string' ? rawDate : (dateObj ? dateObj.toISOString().slice(0,10) : '');
 
-                // Compose fields for rendering
                 const topic = topicRaw && topicRaw.trim() ? topicRaw : 'Topic TBA';
                 const speaker = [name, institution].filter(Boolean).join(' — ');
 
-                // Determine status from date only (no Status column in simplified sheet)
                 const today = todayMidnight();
                 const isUpcoming = !!(dateObj && dateObj >= today);
                 const statusClass = isUpcoming ? 'status-upcoming' : 'status-past';
@@ -255,7 +269,6 @@ if(linkElement) {
                     topic,
                     speaker,
                     link: link && link.startsWith('http') ? link : '',
-                    description: description && description.trim() ? description : '',
                     statusClass
                 });
             }
