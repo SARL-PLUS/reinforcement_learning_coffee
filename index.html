@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reinforcement Learning Coffee - AI & RL Meetup in Salzburg</title>
+  <title>Reinforcement Learning Coffee - AI &amp; RL Meetup in Salzburg</title>
   <meta name="description"
     content="Join the Reinforcement Learning Coffee in Salzburg! An open meetup for AI enthusiasts, researchers, and students to discuss RL, Deep Learning, and sequential decision-making.">
   <meta name="keywords"
@@ -12,10 +12,14 @@
   <meta name="author" content="Simon Hirlaender">
   <link rel="canonical" href="https://idalab.at/reinforcement_learning_coffee/">
 
+  <!-- Favicon (inline SVG coffee cup) -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://idalab.at/reinforcement_learning_coffee/">
-  <meta property="og:title" content="Reinforcement Learning Coffee - AI & RL Meetup">
+  <meta property="og:title" content="Reinforcement Learning Coffee - AI &amp; RL Meetup">
   <meta property="og:description"
     content="Join the Reinforcement Learning Coffee in Salzburg! An open meetup for AI enthusiasts to discuss RL, Deep Learning, and sequential decision-making.">
   <meta property="og:image"
@@ -24,7 +28,7 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://idalab.at/reinforcement_learning_coffee/">
-  <meta property="twitter:title" content="Reinforcement Learning Coffee - AI & RL Meetup">
+  <meta property="twitter:title" content="Reinforcement Learning Coffee - AI &amp; RL Meetup">
   <meta property="twitter:description"
     content="Join the Reinforcement Learning Coffee in Salzburg! An open meetup for AI enthusiasts to discuss RL, Deep Learning, and sequential decision-making.">
   <meta property="twitter:image"
@@ -56,478 +60,33 @@
         }
       }
     }
-    </script>
+  </script>
+
+  <!-- Font: preconnect + swap for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet (single, consolidated) -->
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-dark: #050505;
-      --bg-gradient-1: #0f172a;
-      --bg-gradient-2: #1e1b4b;
-      --accent-primary: #06b6d4;
-      /* Cyan */
-      --accent-secondary: #8b5cf6;
-      /* Violet */
-      --accent-glow: rgba(6, 182, 212, 0.5);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --card-bg: rgba(30, 41, 59, 0.4);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --glass-gloss: rgba(255, 255, 255, 0.03);
-      --font-body: 'Montserrat', system-ui, -apple-system, sans-serif;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background-color: var(--bg-dark);
-      background-image:
-        radial-gradient(circle at 10% 0%, rgba(6, 182, 212, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 90% 10%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 50% 110%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
-      color: var(--text-main);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      overflow-x: hidden;
-      min-height: 100vh;
-    }
-
-    /* Scrollbar */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--bg-dark);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 5px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    /* Global background texture to break up black blocks */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 100px 100px;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(5, 5, 5, 0.75);
-      backdrop-filter: blur(12px) saturate(180%);
-      -webkit-backdrop-filter: blur(12px) saturate(180%);
-      border-bottom: 1px solid var(--card-border);
-      transition: background 0.3s ease;
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.2rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo a {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--text-main);
-      text-decoration: none;
-      background: linear-gradient(135deg, #fff, #cbd5e1);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -0.5px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--text-main);
-    }
-
-    /* Layout & Typos */
-    main {
-      padding-bottom: 4rem;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: 4rem auto;
-      /* Reduced margin */
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease forwards;
-    }
-
-    section:not(#hero) {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 2.5rem;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
-
-    section#hero {
-      margin-top: 0;
-      min-height: 55vh;
-      /* Reduced from 85vh */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      background:
-        radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 50%),
-        /* Subtle dot pattern */
-        radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-      background-size: 100% 100%, 30px 30px;
-      padding: 4rem 1.5rem;
-    }
-
-    /* Animation Delays */
-    section:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    section:nth-child(3) {
-      animation-delay: 0.4s;
-    }
-
-    section:nth-child(4) {
-      animation-delay: 0.6s;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #fff 30%, #94a3b8 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -2px;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      color: var(--text-main);
-      display: inline-block;
-      position: relative;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -8px;
-      width: 40px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-      border-radius: 2px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 700px;
-      margin: 0 auto 1.5rem;
-    }
-
-    #about p,
-    #organizers p {
-      text-align: left;
-      margin: 0 0 1.5rem;
-    }
-
-    .hero-content p {
-      font-size: 1.25rem;
-      margin-bottom: 2.5rem;
-    }
-
-    /* Components */
-    .cta-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem 2.5rem;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #fff;
-      text-decoration: none;
-      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-      border-radius: 9999px;
-      box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(6, 182, 212, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-      filter: brightness(1.1);
-    }
-
-    /* Cards generic */
-    .card-style {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 2rem;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
-
-    /* Schedule */
-    .schedule-list {
-      display: grid;
-      gap: 1.2rem;
-    }
-
-    .schedule-header {
-      display: grid;
-      grid-template-columns: 120px 1fr 180px auto;
-      gap: 1.5rem;
-      padding: 0.75rem 1.5rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      border-bottom: 1px solid var(--card-border);
-      margin-bottom: 0.5rem;
-      align-items: center;
-    }
-
-    .schedule-header .details-header {
-      justify-self: end;
-    }
-
-    .schedule-item {
-      display: grid;
-      grid-template-columns: 120px 1fr 180px auto;
-      gap: 1.5rem;
-      align-items: center;
-      padding: 1.25rem 1.5rem;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .schedule-item:hover {
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
-      border-color: rgba(255, 255, 255, 0.15);
-      transform: translateY(-2px) scale(1.005);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-    }
-
-    .schedule-item .date {
-      color: var(--accent-primary);
-      font-weight: 700;
-      font-family: monospace;
-      font-size: 1.05rem;
-    }
-
-    .schedule-item .topic {
-      font-weight: 600;
-      color: #fff;
-      font-size: 1.05rem;
-    }
-
-    .schedule-item .speaker {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
-    .details-link {
-      padding: 0.5rem 1rem;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--accent-primary);
-      border: 1px solid rgba(6, 182, 212, 0.3);
-      border-radius: 99px;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    .details-link:hover {
-      background: rgba(6, 182, 212, 0.1);
-      border-color: var(--accent-primary);
-      box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
-    }
-
-    /* Past Events */
-    .schedule-item.status-past {
-      opacity: 0.6;
-      filter: grayscale(0.5);
-    }
-
-    .schedule-item.status-past:hover {
-      opacity: 0.9;
-      filter: grayscale(0);
-    }
-
-    /* Next Up Highlight */
-    .schedule-item.next-up {
-      border-color: var(--accent-secondary);
-      background: linear-gradient(145deg, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.02) 100%);
-      box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
-    }
-
-    .schedule-item.next-up::before {
-      content: 'NEXT';
-      position: absolute;
-      top: -10px;
-      right: 15px;
-      background: var(--accent-secondary);
-      color: #fff;
-      font-size: 0.65rem;
-      font-weight: 800;
-      padding: 2px 8px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(139, 92, 246, 0.4);
-    }
-
-    /* Sections background specific */
-    #organizers .org-links {
-      background: rgba(0, 0, 0, 0.2);
-      padding: 1.5rem;
-      border-radius: 12px;
-      border: 1px solid var(--card-border);
-    }
-
-    #organizers a {
-      color: var(--accent-primary);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    #organizers a:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      padding: 3rem 1rem;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      border-top: 1px solid var(--card-border);
-    }
-
-    /* Animation Keyframes */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.8rem;
-      }
-
-      nav {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .schedule-header {
-        display: none;
-      }
-
-      /* Hide header on mobile */
-
-      .schedule-item {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-        text-align: left;
-        padding: 1.5rem;
-      }
-
-      .schedule-item .date {
-        font-size: 0.9rem;
-        color: var(--accent-secondary);
-        margin-bottom: 0.2rem;
-      }
-
-      .schedule-item .topic {
-        font-size: 1.2rem;
-      }
-
-      .schedule-item .details-link {
-        display: inline-block;
-        margin-top: 1rem;
-        align-self: start;
-        text-align: center;
-      }
-    }
-  </style>
 </head>
 
 <body>
+  <!-- Mobile overlay -->
+  <div class="nav-overlay"></div>
+
   <header>
     <nav>
       <div class="logo">
-        <a href="#">Reinforcement Learning Coffee</a>
+        <a href="#">☕ RL Coffee</a>
       </div>
-      <ul>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#schedule">Schedule</a></li>
         <li><a href="#signup">Sign Up</a></li>
@@ -538,8 +97,9 @@
 
   <main>
     <section id="hero">
+      <div class="hero-bg"></div>
       <div class="hero-content">
-        <h1>Welcome to the Reinforcement Learning Coffee!</h1>
+        <h1>Welcome to the<br>Reinforcement Learning Coffee!</h1>
         <p>An open, low‑barrier meetup for anyone curious about reinforcement learning and sequential
           decision‑making&mdash;bring an initial idea, a problem, a project, or a recent paper to explore together.</p>
         <a href="#signup" class="cta-button">Sign Up for Updates</a>
@@ -565,7 +125,7 @@
     <section id="schedule">
       <h2>Schedule</h2>
       <div id="schedule-list" class="schedule-list">
-        <div class="schedule-loading">Loading events...</div>
+        <div class="schedule-loading">Loading events…</div>
       </div>
     </section>
 
@@ -586,22 +146,30 @@
           (PLUS)</a>.
       </p>
       <div class="org-links">
-        <p>
-          • SARL at PLUS: <a href="https://idalab.at/team/smart-analytics-reinforcement-learning/" target="_blank"
-            rel="noopener">Smart Analytics &amp; Reinforcement Learning (SARL)</a><br>
-          • Organizer: <a href="https://idalab.at/team/smart-analytics-reinforcement-learning/" target="_blank"
-            rel="noopener">Simon Hirlaender</a><br>
-          • RL Bootcamp hosted by SARL: <a href="https://sarl-plus.github.io/RL-Bootcamp/" target="_blank"
-            rel="noopener">RL Bootcamp</a><br>
-          • SARL GitHub Page: <a href="https://sarl-plus.github.io/" target="_blank"
-            rel="noopener">sarl-plus.github.io</a>
-        </p>
+        <a href="https://idalab.at/team/smart-analytics-reinforcement-learning/" target="_blank" rel="noopener"
+          class="org-link-card">
+          <span class="icon">🔬</span>
+          <span class="label">SARL at PLUS<span class="sublabel">Smart Analytics &amp; RL</span></span>
+        </a>
+        <a href="https://idalab.at/team/smart-analytics-reinforcement-learning/" target="_blank" rel="noopener"
+          class="org-link-card">
+          <span class="icon">👤</span>
+          <span class="label">Simon Hirlaender<span class="sublabel">Organizer</span></span>
+        </a>
+        <a href="https://sarl-plus.github.io/RL-Bootcamp/" target="_blank" rel="noopener" class="org-link-card">
+          <span class="icon">🎓</span>
+          <span class="label">RL Bootcamp<span class="sublabel">Hosted by SARL</span></span>
+        </a>
+        <a href="https://sarl-plus.github.io/" target="_blank" rel="noopener" class="org-link-card">
+          <span class="icon">💻</span>
+          <span class="label">SARL GitHub<span class="sublabel">sarl-plus.github.io</span></span>
+        </a>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Reinforcement Learning Coffee. All Rights Reserved.</p>
+    <p>&copy; 2025–2026 Reinforcement Learning Coffee. All Rights Reserved.</p>
   </footer>
 
   <script src="js/script.js"></script>
