@@ -1,0 +1,13 @@
+body.og { width: 1200px; height: 630px; margin: 0; overflow: hidden; position: relative; display: flex; align-items: center; padding: 0 80px; }
+.og-copy { position: relative; max-width: 760px; }
+.og .hero-title { font-size: 104px; }
+.og .eyebrow { font-size: 20px; }
+.og-sub { margin-top: 28px; font-size: 24px; color: var(--ink-2); }
+.og-grid {
+  position: absolute; right: -40px; top: -40px; width: 520px; height: 720px; opacity: .9;
+  background:
+    linear-gradient(90deg, var(--bg) 0, transparent 40%),
+    repeating-linear-gradient(0deg, transparent 0 44px, var(--bg) 44px 50px),
+    repeating-linear-gradient(90deg, transparent 0 44px, var(--bg) 44px 50px),
+    radial-gradient(circle at 60% 55%, var(--accent-2) 0, var(--accent-2-soft) 55%, var(--line) 75%);
+}

@@ -1,178 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reinforcement Learning Coffee - AI &amp; RL Meetup in Salzburg</title>
-  <meta name="description"
-    content="Join the Reinforcement Learning Coffee in Salzburg! An open meetup for AI enthusiasts, researchers, and students to discuss RL, Deep Learning, and sequential decision-making.">
-  <meta name="keywords"
-    content="Reinforcement Learning, RL, Machine Learning, AI, Artificial Intelligence, Deep Learning, Salzburg, Meetup, Networking, SARL, IDA Lab, Sequential Decision Making, Multi-Agent Systems, Robotics, Control Theory">
-  <meta name="author" content="Simon Hirlaender">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src https://docs.google.com; manifest-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Reinforcement Learning Coffee · Monthly RL meetup in Salzburg</title>
+  <meta name="description" content="An open monthly meetup on reinforcement learning and sequential decision-making, hosted by the SARL group at IDA Lab, Paris Lodron University of Salzburg. First Friday of every month, in Salzburg and online.">
+  <meta name="author" content="Simon Hirländer">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f1ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15110e" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://idalab.at/reinforcement_learning_coffee/">
 
-  <!-- Favicon (inline SVG coffee cup) -->
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Reinforcement Learning Coffee">
   <meta property="og:url" content="https://idalab.at/reinforcement_learning_coffee/">
-  <meta property="og:title" content="Reinforcement Learning Coffee - AI &amp; RL Meetup">
-  <meta property="og:description"
-    content="Join the Reinforcement Learning Coffee in Salzburg! An open meetup for AI enthusiasts to discuss RL, Deep Learning, and sequential decision-making.">
-  <meta property="og:image"
-    content="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:title" content="Reinforcement Learning Coffee">
+  <meta property="og:description" content="An open monthly meetup on reinforcement learning and sequential decision-making. First Friday of every month, Salzburg and online.">
+  <meta property="og:image" content="https://idalab.at/reinforcement_learning_coffee/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://idalab.at/reinforcement_learning_coffee/">
-  <meta property="twitter:title" content="Reinforcement Learning Coffee - AI &amp; RL Meetup">
-  <meta property="twitter:description"
-    content="Join the Reinforcement Learning Coffee in Salzburg! An open meetup for AI enthusiasts to discuss RL, Deep Learning, and sequential decision-making.">
-  <meta property="twitter:image"
-    content="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
-
-  <!-- Structured Data -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EventSeries",
-      "name": "Reinforcement Learning Coffee",
-      "description": "An informal monthly meetup for anyone curious about reinforcement learning and sequential decision-making.",
-      "url": "https://idalab.at/reinforcement_learning_coffee/",
-      "organizer": {
-        "@type": "Person",
-        "name": "Simon Hirlaender",
-        "affiliation": {
-            "@type": "Organization",
-            "name": "SARL at PLUS"
-        }
-      },
-      "location": {
-        "@type": "Place",
-        "name": "IDA Lab, Paris Lodron University of Salzburg",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Salzburg",
-          "addressCountry": "AT"
-        }
-      }
+  {
+    "@context": "https://schema.org",
+    "@type": "EventSeries",
+    "name": "Reinforcement Learning Coffee",
+    "description": "An open monthly meetup on reinforcement learning and sequential decision-making.",
+    "url": "https://idalab.at/reinforcement_learning_coffee/",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "isAccessibleForFree": true,
+    "organizer": {
+      "@type": "Organization",
+      "name": "Smart Analytics & Reinforcement Learning (SARL), IDA Lab, Paris Lodron University of Salzburg",
+      "url": "https://idalab.at/team/smart-analytics-reinforcement-learning/"
+    },
+    "location": {
+      "@type": "Place",
+      "name": "IDA Lab, Paris Lodron University of Salzburg",
+      "address": { "@type": "PostalAddress", "addressLocality": "Salzburg", "addressCountry": "AT" }
     }
+  }
   </script>
 
-  <!-- Font: preconnect + swap for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  <!-- Stylesheet (single, consolidated) -->
+  <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+  <script src="js/talks.js" defer></script>
+  <script src="js/app.js" defer></script>
 </head>
-
 <body>
-  <!-- Mobile overlay -->
-  <div class="nav-overlay"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header>
-    <nav>
-      <div class="logo">
-        <a href="#">☕ RL Coffee</a>
-      </div>
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <a class="brand" href="#top" aria-label="RL Coffee, back to top">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-cup"/></svg>
+        <span class="brand-name">RL Coffee</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="visually-hidden">Menu</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#signup">Sign Up</a></li>
-        <li><a href="#organizers">Organizers</a></li>
-      </ul>
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#next">Next session</a></li>
+          <li><a href="#schedule">Archive</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#organizers">Organizers</a></li>
+        </ul>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-theme"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm" href="#signup">Get reminders</a>
+      </div>
     </nav>
   </header>
 
-  <main>
-    <section id="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-content">
-        <h1>Welcome to the<br>Reinforcement Learning Coffee!</h1>
-        <p>An open, low‑barrier meetup for anyone curious about reinforcement learning and sequential
-          decision‑making&mdash;bring an initial idea, a problem, a project, or a recent paper to explore together.</p>
-        <a href="#signup" class="cta-button">Sign Up for Updates</a>
+  <main id="main">
+    <section class="hero container" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Monthly · Salzburg &amp; online · Free</p>
+        <h1 class="hero-title">Reinforcement Learning <em>Coffee</em></h1>
+        <p class="lede">
+          An open, low-barrier meetup for anyone curious about reinforcement learning and sequential
+          decision-making. Bring an early idea, a stubborn problem, a project, or a recent paper to
+          explore together.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#next">See the next session</a>
+          <a class="btn btn-ghost" href="#schedule">Browse all talks</a>
+        </div>
+        <dl class="facts">
+          <div><dt>When</dt><dd>First Friday of every month</dd></div>
+          <div><dt>Where</dt><dd>IDA Lab, PLUS Salzburg, and online</dd></div>
+          <div><dt>Who</dt><dd>Students to senior researchers</dd></div>
+        </dl>
+      </div>
+
+      <figure class="hero-visual">
+        <canvas id="gridworld" aria-hidden="true"></canvas>
+        <figcaption>
+          <span class="mono">value iteration</span>
+          The agent learns, one Bellman sweep at a time, where the coffee is.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="next container" id="next" aria-labelledby="next-title">
+      <h2 class="visually-hidden" id="next-title">Next session</h2>
+      <article class="next-card" id="next-card" aria-live="polite">
+        <div class="next-date">
+          <span class="next-weekday" data-slot="weekday">Friday</span>
+          <span class="next-day" data-slot="day">&nbsp;</span>
+          <span class="next-month" data-slot="month">&nbsp;</span>
+        </div>
+        <div class="next-body">
+          <p class="next-kicker"><span class="dot" aria-hidden="true"></span><span data-slot="kicker">Next session</span></p>
+          <h3 class="next-topic" data-slot="topic">Loading the schedule…</h3>
+          <p class="next-speaker" data-slot="speaker"></p>
+          <div class="next-actions">
+            <button class="btn btn-primary btn-sm" type="button" data-action="ics" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cal"/></svg>Add to calendar
+            </button>
+            <a class="btn btn-ghost btn-sm" data-slot="material" hidden target="_blank" rel="noopener noreferrer"></a>
+            <a class="btn btn-ghost btn-sm" data-slot="propose" href="#propose" hidden>Propose a talk</a>
+          </div>
+        </div>
+      </article>
+
+      <ul class="stats" aria-label="In numbers">
+        <li><strong data-stat="sessions">–</strong><span>sessions held</span></li>
+        <li><strong data-stat="affiliations">–</strong><span>speaker affiliations</span></li>
+        <li><strong data-stat="since">2024</strong><span>running since March</span></li>
+        <li><strong>0 €</strong><span>free and open to all</span></li>
+      </ul>
+    </section>
+
+    <section class="schedule container" id="schedule" aria-labelledby="schedule-title">
+      <header class="section-head">
+        <p class="eyebrow">Schedule &amp; archive</p>
+        <h2 id="schedule-title">Every talk so far</h2>
+        <p class="section-sub">Pulled live from the organizers' schedule. Slides, papers and code are linked where speakers shared them.</p>
+      </header>
+
+      <div class="toolbar">
+        <label class="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-search"/></svg>
+          <span class="visually-hidden">Search talks</span>
+          <input type="search" id="search" placeholder="Search topic, speaker, institution" autocomplete="off" spellcheck="false">
+          <kbd aria-hidden="true">/</kbd>
+        </label>
+        <div class="filters" role="group" aria-label="Filter talks" id="filters">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="upcoming" aria-pressed="false">Upcoming</button>
+          <button type="button" data-filter="materials" aria-pressed="false">With materials</button>
+          <!-- year filters are added from the data -->
+        </div>
+      </div>
+      <p class="results" id="results" role="status">&nbsp;</p>
+
+      <div id="talks" class="talks">
+        <noscript>
+          <p class="empty">The schedule needs JavaScript. You can also
+            <a href="https://docs.google.com/spreadsheets/d/1d9mY-ZdecDYc6HToxOdW3T8OqfTEnK07pExCXUc4NWg/" rel="noopener noreferrer">open the schedule sheet</a> directly.</p>
+        </noscript>
       </div>
     </section>
 
-    <section id="about">
-      <h2>About The RL Coffee</h2>
-      <p>
-        The Reinforcement Learning Coffee is an informal meetup held on the first Friday of every month.
-        The entry level is intentionally low and everyone is welcome&mdash;from newcomers to experienced practitioners
-        interested in
-        reinforcement learning and sequential decision-making. Topics can range from an initial idea or open problem to
-        a more involved
-        project, your latest paper or a paper idea, or simply trying to understand a recent paper together.
-      </p>
-      <p>
-        The idea was born out of the Machine Learning Coffee we introduced at CERN, where we introduced machine learning
-        and reinforcement learning to the CERN accelerator complex.
-      </p>
-    </section>
-
-    <section id="schedule">
-      <h2>Schedule</h2>
-      <div id="schedule-list" class="schedule-list">
-        <div class="schedule-loading">Loading events…</div>
+    <section class="about container" id="about" aria-labelledby="about-title">
+      <header class="section-head">
+        <p class="eyebrow">About</p>
+        <h2 id="about-title">Half-baked ideas welcome</h2>
+      </header>
+      <div class="about-grid">
+        <div class="prose">
+          <p>
+            The Reinforcement Learning Coffee meets on the <strong>first Friday of every month</strong>.
+            The entry level is intentionally low and everyone is welcome, from newcomers to experienced
+            practitioners. A session can be an initial idea or open problem, a more involved project,
+            your latest paper or a paper idea, or simply working through a recent paper together.
+          </p>
+          <p>
+            The format grew out of the <strong>Machine Learning Coffee at CERN</strong>, where machine learning
+            and reinforcement learning were introduced to the CERN accelerator complex. Talks since then have
+            ranged from quantum optimal control and laser alignment to heat pumps, air traffic and chemical
+            oscillators.
+          </p>
+        </div>
+        <ol class="principles">
+          <li>
+            <h3>Low barrier</h3>
+            <p>No polished results needed. Open questions and failed experiments make good sessions.</p>
+          </li>
+          <li>
+            <h3>Real systems</h3>
+            <p>A soft spot for RL on physical systems: accelerators, lasers, mechatronics, processes.</p>
+          </li>
+          <li>
+            <h3>Across institutions</h3>
+            <p>Speakers from universities, research institutes and industry, in Salzburg and remote.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <section id="signup">
-      <h2>Stay in the Loop!</h2>
-      <p>Sign up to our mailing list to get reminders about upcoming meetings and any last-minute changes.</p>
-      <a href="https://docs.google.com/forms/d/1B0mIi_Y6tOKZln98NxQRgItbBiC-ts_r22ZpfSG_XuA/viewform?edit_requested=true"
-        class="cta-button" id="google-form-link" target="_blank" rel="noopener">Join the Sign-up List</a>
-    </section>
-
-    <section id="organizers">
-      <h2>Organized by</h2>
-      <p>
-        This event is organized by the <a href="https://idalab.at/team/smart-analytics-reinforcement-learning/"
-          target="_blank" rel="noopener">Smart Analytics &amp; Reinforcement Learning (SARL) team</a>
-        at the <a href="https://idalab.at/" target="_blank" rel="noopener">IDA
-          Lab</a>, <a href="https://www.plus.ac.at/" target="_blank" rel="noopener">Paris Lodron University of Salzburg
-          (PLUS)</a>.
-      </p>
-      <div class="org-links">
-        <a href="https://idalab.at/team/smart-analytics-reinforcement-learning/" target="_blank" rel="noopener"
-          class="org-link-card">
-          <span class="icon">🔬</span>
-          <span class="label">SARL at PLUS<span class="sublabel">Smart Analytics &amp; RL</span></span>
-        </a>
-        <a href="https://idalab.at/team/smart-analytics-reinforcement-learning/" target="_blank" rel="noopener"
-          class="org-link-card">
-          <span class="icon">👤</span>
-          <span class="label">Simon Hirlaender<span class="sublabel">Organizer</span></span>
-        </a>
-        <a href="https://sarl-plus.github.io/RL-Bootcamp/" target="_blank" rel="noopener" class="org-link-card">
-          <span class="icon">🎓</span>
-          <span class="label">RL Bootcamp<span class="sublabel">Hosted by SARL</span></span>
-        </a>
-        <a href="https://sarl-plus.github.io/" target="_blank" rel="noopener" class="org-link-card">
-          <span class="icon">💻</span>
-          <span class="label">SARL GitHub<span class="sublabel">sarl-plus.github.io</span></span>
+    <section class="cta-band container" id="signup" aria-labelledby="signup-title">
+      <div class="cta-card">
+        <div>
+          <p class="eyebrow">Stay in the loop</p>
+          <h2 id="signup-title">Get a reminder before every session</h2>
+          <p>Join the mailing list for the monthly reminder, the talk details and any last-minute changes.</p>
+        </div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/1B0mIi_Y6tOKZln98NxQRgItbBiC-ts_r22ZpfSG_XuA/viewform" target="_blank" rel="noopener noreferrer">
+          Join the sign-up list <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-out"/></svg>
         </a>
       </div>
+      <div class="cta-card cta-card--quiet" id="propose">
+        <div>
+          <p class="eyebrow">Present something</p>
+          <h2>Have an idea, a result, or a question?</h2>
+          <p>Every stage is welcome, from a first sketch to a finished preprint. Get in touch with the SARL team to pick a Friday.</p>
+        </div>
+        <a class="btn btn-ghost" href="https://idalab.at/team/smart-analytics-reinforcement-learning/" target="_blank" rel="noopener noreferrer">
+          Contact the organizers <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-out"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="organizers container" id="organizers" aria-labelledby="org-title">
+      <header class="section-head">
+        <p class="eyebrow">Organized by</p>
+        <h2 id="org-title">SARL at the IDA Lab</h2>
+        <p class="section-sub">The Smart Analytics &amp; Reinforcement Learning team at the IDA Lab, Paris Lodron University of Salzburg (PLUS).</p>
+      </header>
+      <ul class="org-grid">
+        <li><a class="org-card" href="https://idalab.at/team/smart-analytics-reinforcement-learning/" target="_blank" rel="noopener noreferrer">
+          <span class="org-name">SARL at PLUS</span><span class="org-sub">Smart Analytics &amp; RL</span></a></li>
+        <li><a class="org-card" href="https://idalab.at/team/smart-analytics-reinforcement-learning/" target="_blank" rel="noopener noreferrer">
+          <span class="org-name">Simon Hirländer</span><span class="org-sub">Organizer</span></a></li>
+        <li><a class="org-card" href="https://sarl-plus.github.io/RL-Bootcamp/" target="_blank" rel="noopener noreferrer">
+          <span class="org-name">RL Bootcamp</span><span class="org-sub">Hosted by SARL</span></a></li>
+        <li><a class="org-card" href="https://sarl-plus.github.io/" target="_blank" rel="noopener noreferrer">
+          <span class="org-name">SARL on GitHub</span><span class="org-sub">sarl-plus.github.io</span></a></li>
+      </ul>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025–2026 Reinforcement Learning Coffee. All Rights Reserved.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Reinforcement Learning Coffee · SARL, IDA Lab, PLUS Salzburg</p>
+      <ul>
+        <li><a href="https://idalab.at/" target="_blank" rel="noopener noreferrer">IDA Lab</a></li>
+        <li><a href="https://www.plus.ac.at/" target="_blank" rel="noopener noreferrer">PLUS</a></li>
+        <li><a href="#top">Back to top</a></li>
+      </ul>
+    </div>
   </footer>
 
-  <script src="js/script.js"></script>
-</body>
+  <template id="tpl-year">
+    <section class="year-group">
+      <h3 class="year-label"></h3>
+      <ol class="talk-list"></ol>
+    </section>
+  </template>
 
+  <template id="tpl-talk">
+    <li class="talk">
+      <time class="talk-date"><span class="talk-day"></span><span class="talk-month"></span></time>
+      <div class="talk-main">
+        <p class="talk-topic"></p>
+        <p class="talk-who"></p>
+      </div>
+      <div class="talk-side">
+        <a class="chip" target="_blank" rel="noopener noreferrer" hidden></a>
+        <button class="icon-btn" type="button" data-action="copy" aria-label="Copy link to this talk">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-link"/></svg>
+        </button>
+      </div>
+    </li>
+  </template>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-cup" viewBox="0 0 32 32"><path d="M6 13h17v6a8 8 0 0 1-8 8h-1a8 8 0 0 1-8-8v-6Z" fill="currentColor"/><path d="M23 15h1.5a3.5 3.5 0 0 1 0 7H22" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 9.5 13 7l2 2.5M16.5 9.5l2-2.5 2 2.5" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-theme" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-out" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+</body>
 </html>

@@ -1,188 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"Proximal Policy Optimization Algorithms" - A Deep Dive - RL Coffee</title>
-
-    <!-- Favicon -->
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <style>
-        :root {
-            --bg-dark: #050505;
-            --accent-primary: #06b6d4;
-            --accent-secondary: #8b5cf6;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --card-bg: rgba(30, 41, 59, 0.45);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --font-body: 'Montserrat', system-ui, -apple-system, sans-serif;
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            background-color: var(--bg-dark);
-            background-image:
-                radial-gradient(circle at 10% 0%, rgba(6, 182, 212, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 90% 10%, rgba(139, 92, 246, 0.12) 0%, transparent 40%);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            line-height: 1.7;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 3rem 1.5rem;
-        }
-
-        .event-detail-container {
-            max-width: 800px;
-            width: 100%;
-            padding: 2.5rem;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow:
-                0 8px 30px -10px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.04);
-            animation: fadeIn 0.6s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent-primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .back-link:hover {
-            color: #fff;
-        }
-
-        h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin: 0 0 1rem;
-            background: linear-gradient(135deg, #fff 30%, #94a3b8 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin: 2rem 0 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -6px;
-            width: 30px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-            border-radius: 2px;
-        }
-
-        p {
-            color: var(--text-muted);
-            margin: 0 0 1rem;
-        }
-
-        p strong {
-            color: var(--text-main);
-        }
-
-        hr {
-            border: none;
-            height: 1px;
-            background: var(--card-border);
-            margin: 1.5rem 0;
-        }
-
-        ul {
-            padding-left: 1.25rem;
-            color: var(--text-muted);
-        }
-
-        ul li {
-            margin-bottom: 0.6rem;
-        }
-
-        ul a {
-            color: var(--accent-primary);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        ul a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Autonomous Crystal Collimator Alignment using RL · RL Coffee</title>
+  <meta name="description" content="Reinforcement Learning Coffee, 3 October 2025: Leander Grech (University of Malta) on autonomous crystal collimator alignment using reinforcement learning.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://idalab.at/reinforcement_learning_coffee/events/2025-10-03.html">
+  <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/theme.js"></script>
 </head>
-
 <body>
-    <div class="event-detail-container">
-        <a href="../index.html" class="back-link">&larr; Back to Schedule</a>
-        <h1>"Proximal Policy Optimization Algorithms" - A Deep Dive</h1>
-        <p><strong>Date:</strong> October 3, 2025</p>
-        <p><strong>Speaker:</strong> Dr. Eva Core</p>
-        <hr>
-        <h2>Abstract</h2>
-        <p>
-            This talk will provide a deep dive into Proximal Policy Optimization (PPO), one of the most popular
-            reinforcement learning algorithms used today. We will cover the theoretical foundations that make PPO
-            effective and stable, including its relationship with Trust Region Policy Optimization (TRPO). We'll also
-            walk through practical implementation details and discuss common pitfalls.
-        </p>
-        <h2>Materials</h2>
-        <ul>
-            <li><a href="#">Presentation Slides (PDF)</a></li>
-            <li><a href="#">Link to Paper</a></li>
-            <li><a href="#">Colab Notebook with Code</a></li>
-        </ul>
-    </div>
-</body>
+  <main class="container event-page">
+    <a class="back-link" href="../index.html#talk-2025-10-03">&larr; All talks</a>
+    <h1>Autonomous Crystal Collimator Alignment using Reinforcement Learning</h1>
+    <dl class="event-meta">
+      <div><dt>Date</dt><dd><time datetime="2025-10-03">Friday, 3 October 2025</time></dd></div>
+      <div><dt>Speaker</dt><dd>Leander Grech</dd></div>
+      <div><dt>Institution</dt><dd>University of Malta</dd></div>
+    </dl>
 
+    <h2>Materials</h2>
+    <p><a class="btn btn-ghost" href="https://drive.google.com/file/d/1CQ1WWYb-Pzm5CDQlsGmJ_q8cVm63ZXiY/view?usp=sharing" target="_blank" rel="noopener noreferrer">Slides (Google Drive)</a></p>
+  </main>
+</body>
 </html>
