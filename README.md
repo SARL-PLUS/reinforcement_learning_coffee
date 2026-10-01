@@ -1,7 +1,7 @@
 # Reinforcement Learning Coffee
 
 Website of the monthly **Reinforcement Learning Coffee**, hosted by the Smart Analytics & Reinforcement Learning (SARL) team at the IDA Lab, Paris Lodron University of Salzburg (PLUS).
-Live at <https://idalab.at/reinforcement_learning_coffee/>.
+Live at <https://sarl-plus.github.io/reinforcement_learning_coffee/>.
 
 ## How it works
 

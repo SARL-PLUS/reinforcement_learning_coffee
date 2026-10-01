@@ -11,7 +11,7 @@
   var SHEET_ID = '1d9mY-ZdecDYc6HToxOdW3T8OqfTEnK07pExCXUc4NWg';
   var SHEET_URL = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:json&gid=0';
   var CACHE_KEY = 'rlc-sheet-v1';
-  var SITE_URL = 'https://idalab.at/reinforcement_learning_coffee/';
+  var SITE_URL = 'https://sarl-plus.github.io/reinforcement_learning_coffee/';
   var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   var MONTHS_LONG = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
