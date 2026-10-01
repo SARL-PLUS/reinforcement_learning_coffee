@@ -197,8 +197,8 @@ window.RLC_SNAPSHOT = [
     "link": ""
   },
   {
-    "date": "2026-09-01",
-    "speaker": "Hannes Unger",
+    "date": "2026-10-02",
+    "speaker": "Hannes Waclawek",
     "institution": "Salzburg University of Applied Sciences",
     "topic": "Chebyshev Policies and the Mountain Car Problem - Reinforcement Learning for Low-Dimensional Control Tasks",
     "link": "https://arxiv.org/abs/2605.22305"
