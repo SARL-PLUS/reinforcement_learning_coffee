@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>RL Coffee: Welcome</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root { --g:#356E61; --g2:#E6F0ED; --ink:#1F2A2E; --mut:#5F6B70; --line:#D9E2DF; --cof:#7A4E2D; --cof2:#F6EEE7; }
+* { box-sizing:border-box; }
+html,body { margin:0; height:100%; background:#fff; }
+body { font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; color:var(--ink); display:flex; align-items:center; justify-content:center; }
+.slide { width:min(100vw, 177.78vh); aspect-ratio:16/9; padding:3.4% 4.2% 2.8%; display:flex; flex-direction:column; font-size:min(1.2vw, 2.13vh); }
+.kicker { color:var(--cof); font-weight:700; letter-spacing:.12em; font-size:.8em; text-transform:uppercase; }
+h1 { font-size:2.5em; margin:.1em 0 .15em; line-height:1.05; }
+.lead { font-size:1.15em; color:var(--mut); margin:0 0 .9em; }
+.grid { display:grid; grid-template-columns:1.1fr 1fr; gap:3%; flex:1; min-height:0; }
+.card { border-radius:.6em; padding:.9em 1.1em; }
+.talk { background:var(--cof2); }
+.talk .t { font-size:1.35em; font-weight:700; line-height:1.2; margin:.2em 0 .3em; }
+.talk .who { color:var(--mut); margin-bottom:.4em; }
+h2 { font-size:1em; color:var(--g); margin:0 0 .5em; text-transform:uppercase; letter-spacing:.06em; }
+.talk h2 { color:var(--cof); }
+table { width:100%; border-collapse:collapse; margin-top:.6em; }
+td { padding:.35em .3em; border-bottom:1px solid #E8DCD1; vertical-align:top; line-height:1.25; }
+td.m { white-space:nowrap; font-weight:700; color:var(--cof); width:1%; }
+.side { display:flex; flex-direction:column; gap:.8em; }
+.box { background:var(--g2); }
+ul { margin:0; padding-left:1.1em; } li { margin-bottom:.35em; line-height:1.28; }
+a { color:var(--g); font-weight:700; text-decoration:none; border-bottom:.08em solid currentColor; }
+.talk a { color:var(--cof); }
+.new { border:2px dashed var(--g); }
+.foot { margin-top:.8em; font-size:.8em; color:var(--mut); }
+</style></head><body>
+<div class="slide">
+  <div class="kicker">Reinforcement Learning Coffee · Friday 2 October 2026 · 11:00 to 12:00 · Teams</div>
+  <h1>Welcome, and thank you for being here!</h1>
+  <p class="lead">An informal monthly meetup for anyone curious about RL. Half-baked ideas welcome: no polished results needed.</p>
+  <div class="grid">
+    <div class="card talk">
+      <h2>Today's talk</h2>
+      <div class="t">Chebyshev Policies and the Mountain Car Problem: Reinforcement Learning for Low-Dimensional Control Tasks</div>
+      <div class="who">Hannes Waclawek, Salzburg University of Applied Sciences · <a href="https://arxiv.org/abs/2605.22305">arXiv:2605.22305</a></div>
+      <table>
+        <tr><td class="m">11:00</td><td><b>Short introduction round:</b> your name, what you work on, in one sentence</td></tr>
+        <tr><td class="m">~11:05</td><td><b>Talk, about 25 minutes</b>; clarifying questions any time</td></tr>
+        <tr><td class="m">~11:30</td><td><b>Open discussion</b>: raise your hand or just unmute</td></tr>
+        <tr><td class="m">11:55</td><td>Next session and who presents</td></tr>
+      </table>
+    </div>
+    <div class="side">
+      <div class="card box">
+        <h2>How it works</h2>
+        <ul>
+          <li><b>First Friday of every month</b>, online via Teams, free and open to all, students to senior researchers.</li>
+          <li>A session can be an early idea, an open problem, a project, your latest paper, or a paper we read together.</li>
+          <li>Talks are <b>about 25 minutes</b>, then discussion.</li>
+        </ul>
+      </div>
+      <div class="card box">
+        <h2>Present your work: sign up</h2>
+        <ul>
+          <li>Propose a talk: <a href="https://docs.google.com/forms/d/1B0mIi_Y6tOKZln98NxQRgItbBiC-ts_r22ZpfSG_XuA/viewform">sign-up form</a></li>
+          <li>Schedule and open slots: <a href="https://docs.google.com/spreadsheets/d/1d9mY-ZdecDYc6HToxOdW3T8OqfTEnK07pExCXUc4NWg/">schedule sheet</a></li>
+          <li>Homepage, archive, reminders: <a href="https://sarl-plus.github.io/reinforcement_learning_coffee/">sarl-plus.github.io/reinforcement_learning_coffee</a></li>
+        </ul>
+      </div>
+      <div class="card new">
+        <h2>New: a Teams channel</h2>
+        <p style="margin:0;line-height:1.3">Coming soon: one place for announcements, slides and questions between sessions.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot">Next session: Friday 6 November 2026, 11:00. The slot is still open: sign up! · Recordings only with the speaker's consent.</div>
+</div>
+</body></html>
