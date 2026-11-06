@@ -197,10 +197,31 @@ window.RLC_SNAPSHOT = [
     "link": ""
   },
   {
+    "date": "2026-09-04",
+    "speaker": "-",
+    "institution": "-",
+    "topic": "-",
+    "link": ""
+  },
+  {
     "date": "2026-10-02",
     "speaker": "Hannes Waclawek",
     "institution": "Salzburg University of Applied Sciences",
     "topic": "Chebyshev Policies and the Mountain Car Problem - Reinforcement Learning for Low-Dimensional Control Tasks",
     "link": "https://arxiv.org/abs/2605.22305"
+  },
+  {
+    "date": "2026-11-06",
+    "speaker": "Nikola Milosevic",
+    "institution": "MPI CBS Leipzig",
+    "topic": "The Duality of Perception and Action in Brains, Minds, and Machines",
+    "link": ""
+  },
+  {
+    "date": "2026-12-04",
+    "speaker": "Simon Hirlaender",
+    "institution": "University of Salzburg",
+    "topic": "Learning to Tune an Accelerator from Logs: Physics-Structured World Models for Safe Offline RL",
+    "link": ""
   }
 ];
